@@ -22,7 +22,9 @@ pages << {
             isMobile: false,
         });",
         disable_adblocker: true,
-    }
-    
+    },
+    vars:{
+        "page" => 1
+      }
   }
   
