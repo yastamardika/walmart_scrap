@@ -5,6 +5,11 @@ pages << {
         "User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
         "Sec-CH-UA" => "'Not A;Brand';v='99', 'Chromium';v='96', 'Google Chrome';v='96'"},
     url: "https://www.walmart.com/browse/movies-tv-shows/4096?facet=new_releases:Last+90+Days",
-    fetch_type: "browser"
+    fetch_type: "browser",
+    display: {
+        "width": 1366,
+        "height": 768
+    }
+    
   }
   

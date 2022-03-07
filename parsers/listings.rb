@@ -1,6 +1,6 @@
 html = Nokogiri.HTML(content)
 
-products = html.css('[data-testid="flex-container"]')
+products = html
 p products
 products.each do |product|
   href = product.at_css('a.product-title-link')['href']
