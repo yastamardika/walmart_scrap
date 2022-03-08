@@ -2,10 +2,10 @@ html = Nokogiri.HTML(content)
 
 # initialize an empty hash
 product = {}
-
+# p html
 #extract title
 product['title'] = html.at_css('h1.lh-copy').text.strip
-p product['title'] 
+# p product['title'] 
 
 #extract current price
 product['current_price'] = html.at_css('[itemprop="price"]').text.strip 
@@ -16,11 +16,11 @@ original_price = original_price_div ? original_price_div.text.strip.gsub('$','')
 product['original_price'] = original_price == 0.0 ? nil : original_price
 
 #extract rating
-rating = html.at_css('.f7.rating-number').text.strip.gsub('(','').gsub(')','').to_f
+rating = html.css('.f7.rating-number').text.strip.gsub(/()/,'').to_f
 product['rating'] = rating == 0 ? nil : rating
 
 #extract number of reviews
-review_text = html.at_css('[itemprop="ratingCount"]').text.strip
+review_text = html.css('[itemprop="ratingCount"]').text.strip
 product['reviews_count'] = review_text =~ /reviews/ ? review_text.split(' ').first.to_i : 0
 
 #extract publisher
