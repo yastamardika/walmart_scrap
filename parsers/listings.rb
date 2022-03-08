@@ -1,10 +1,11 @@
 html = Nokogiri.HTML(content)
 
+p html
 products = html.css('div[data-stack-index="0"] section div.flex.flex-wrap div.mb1.ph1.pa0-xl')
-# p products
+p products
 products.each do |product|
   href = product.css('a.absolute.w-100.h-100.z-1 > @href').text
-  # p href
+  p href
   url = "https://www.walmart.com#{href}"
   pages << {
       url: url,
@@ -54,6 +55,8 @@ if next_ur != []
         "Sec-Ch-Ua-Platform" => "Windows"
       },
       driver: {
+        code: "await page.click(iframe[style='display: block; width: 100%; height: 100px; border: 0; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;'], {delay: 10000});",
+        ,
         pre_code: "await page.setViewport({
             width: 1920 + Math.floor(Math.random() * 100),
             height: 3000 + Math.floor(Math.random() * 100),
@@ -63,6 +66,14 @@ if next_ur != []
             isMobile: false,
         });",
         disable_adblocker: true,
-      }
+      },
+      screenshot: {
+        "take_screenshot": true,
+        "options": {
+         "fullPage": false,
+         "type": "jpeg",
+         "quality": 75
+       }
+    }
     }
 end

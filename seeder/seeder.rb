@@ -21,7 +21,16 @@ pages << {
             isLandscape: false,
             isMobile: false,
         });",
+        code: "await page.click(iframe[style='display: block; width: 100%; height: 100px; border: 0; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;'], {delay: 10000});",
         disable_adblocker: true,
+    },
+    screenshot: {
+        "take_screenshot": true,
+        "options": {
+         "fullPage": false,
+         "type": "jpeg",
+         "quality": 75
+       }
     }
   }
   
