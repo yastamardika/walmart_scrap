@@ -36,11 +36,10 @@ end
 
 # pagination_links = html.css('.list.flex.items-center.justify-center.pa0 li')
 # next_ur = pagination_links ? pagination_links.css('a')[4].text.to_i : 0
-# p next_ur
-i = page["vars"]["page"]
-i += 1
-if i <= 25
-  url = "https://www.walmart.com/browse/movies-tv-shows/4096?facet=new_releases%3ALast+90+Days&page=#{i}&affinityOverride=default"
+next_ur = html.css('.list.flex.items-center.justify-center.pa0 li a[aria-label="Next Page"] > @href')
+
+if next_ur != []
+  url = "https://www.walmart.com#{next_ur}"
   pages << {
       url: url,
       page_type: 'listings',
@@ -64,9 +63,6 @@ if i <= 25
             isMobile: false,
         });",
         disable_adblocker: true,
-      },
-      vars:{
-        "page" => i
       }
     }
 end
