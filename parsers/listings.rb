@@ -55,8 +55,6 @@ if next_ur != []
         "Sec-Ch-Ua-Platform" => "Windows"
       },
       driver: {
-        code: "await page.click(iframe[style='display: block; width: 100%; height: 100px; border: 0; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none;'], {delay: 10000});",
-        ,
         pre_code: "await page.setViewport({
             width: 1920 + Math.floor(Math.random() * 100),
             height: 3000 + Math.floor(Math.random() * 100),
@@ -74,6 +72,6 @@ if next_ur != []
          "type": "jpeg",
          "quality": 75
        }
-    }
+      }
     }
 end
